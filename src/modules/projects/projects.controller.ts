@@ -14,7 +14,10 @@ import { ApiResponse } from '@nestjs/swagger'
 import { ProjectListItemDTO, ProjectRequestDTO } from './projects.dto'
 import { ProjectsService } from './projects.service'
 
-@Controller('projects')
+@Controller({
+  version: '1',
+  path: 'projects',
+})
 export class ProjectsController {
   constructor(private readonly projectsService: ProjectsService) {}
   @Get()
